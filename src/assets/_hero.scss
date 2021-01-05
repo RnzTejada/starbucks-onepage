@@ -1,0 +1,128 @@
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .text-box {
+    position: relative;
+    max-width: 60%;
+    p {
+      color: $texts;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 20px;
+      background: $primaryColor;
+      color: #fff;
+      border-radius: 40px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+    h2 {
+      color: $texts;
+      font-size: 4em;
+      line-height: 1.4em;
+      font-weight: 500;
+      span {
+        color: $primaryColor;
+        font-size: 1.2em;
+        font-weight: 900;
+      }
+    }
+  }
+  .img-box {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+    img {
+      max-width: 340px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  section {
+    padding: 20px 20px 120px;
+    .content {
+      flex-direction: column;
+      margin-top: 100px;
+      .img-box {
+        max-width: 100%;
+        justify-content: center;
+        img {
+          max-width: 300px;
+        }
+      }
+      .text-box {
+        max-width: 100%;
+        h2 {
+          margin-bottom: 15px;
+          font-size: 2.5em;
+        }
+      }
+    }
+  }
+  header {
+    padding: 20px;
+    .logo {
+      max-width: 60px;
+    }
+    ul {
+      display: none;
+      &.navigation.active {
+        transition: 1s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        max-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        z-index: 10;
+      }
+      li {
+        a {
+          font-size: 1.5em;
+          margin: 5px 0;
+          &:hover {
+            transition: 0.5s;
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+    .toggle {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      background: url('img/menu.png');
+      background-size: 30px;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: 0.5s;
+      filter: invert(1);
+      z-index: 11;
+      &.active {
+        transition: 0.5s;
+        background: url('img/close.png');
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .circle {
+    transition: 1s !important;
+    clip-path: circle(400px at center bottom) !important;
+  }
+}
